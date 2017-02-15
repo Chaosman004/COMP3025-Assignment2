@@ -5,13 +5,35 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <h1>Todos List</h1>
+  <button ion-button (click)="addTodo()">
+    <ion-icon name="add"></ion-icon>
+    Add New Todo
+  </button>
+  <ion-list>
+    <ion-item-sliding *ngFor="let todo of todos | async">
+      <ion-item>
+        <ion-row>
+          <ion-col>
+            {{todo.name}}
+          </ion-col>
+          <ion-col>
+            {{todo.notes}}
+          </ion-col>
+          <ion-col>
+            {{todo.completed}}
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item-options>
+        <button ion-button color="primary" icon-left>
+        <ion-icon name="build" ></ion-icon>
+        Edit</button>
+        <button ion-button color="danger" (click)="deleteTodo(todo._id)" icon-left>
+        <ion-icon name="trash"></ion-icon>
+        Delete</button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>
+

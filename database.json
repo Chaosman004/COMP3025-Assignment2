@@ -1,0 +1,22 @@
+{
+  "todos": [
+    {
+      "_id": 1,
+      "completed": false,
+      "name": "make todos",
+      "notes": "needs to be done"
+    },
+    {
+      "_id": 2,
+      "completed": false,
+      "name": "Dummy",
+      "notes": "Data"
+    },
+    {
+      "_id": 3,
+      "completed": true,
+      "name": "Dummy2",
+      "notes": "Data2"
+    }
+  ]
+}
