@@ -11,22 +11,24 @@
   <ion-list>
 
     <ion-item>
-      <ion-input type="text" placeholder="Name"></ion-input>
+      <ion-label>Please enter Todo Name: </ion-label>
+      <ion-input type="text" [(ngModel)]="todoName" name="name" placeholder="Name" id="Name"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-input type="number" placeholder="Notes"></ion-input>
+      <ion-label>Notes: </ion-label>
+      <ion-input type="text" [(ngModel)]="todoNotes" name="notes" placeholder="Notes" id="Notes"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-checkbox></ion-checkbox>
-      <ion-input type="text" placeholder="Completed"></ion-input>
+      <ion-label>Completed: </ion-label>
+      <ion-checkbox [(ngModel)]="todoCompleted" name="completed" id="Completed"></ion-checkbox>
     </ion-item>
 
   </ion-list>
 
   <div padding>
-  <button ion-button color="primary">Submit</button>
+  <button ion-button color="primary" (click)="addTodo(todoName,todoNotes,todoCompleted)">Submit</button>
 </div>
 
 </ion-content>

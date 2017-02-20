@@ -23,15 +23,17 @@ export class HomePage {
     this.todos = af.database.list('/todos');
   }
   // METHODS
-  addTodo() {
+ addTodo() {
     this.navCtrl.push(DetailsPage);
   }
+
+
 
   editTodo(){
     this.navCtrl.push(DetailsPage);
   }
 
-  deletGame(todoID){
-    this.todos.remove(todoID);
+  deleteTodo(todoID){
+   this.todos.remove(todoID);
   }
 }
