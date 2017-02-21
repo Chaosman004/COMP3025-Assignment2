@@ -1,3 +1,10 @@
+/**
+ * File Name: app.module.ts
+ * Author: Robert Page
+ * Student Number: 200281838
+ * App Description: Links modules together
+ */
+
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
@@ -13,13 +20,14 @@ import { AngularFireModule } from 'angularfire2';
 
 // AF2 Settings
 export const firebaseConfig = {
-    apiKey: "AIzaSyDtyhXodBxH4gRL1ovrmyDmI2zqIivqDCE",
-    authDomain: "todolist-7afba.firebaseapp.com",
-    databaseURL: "https://todolist-7afba.firebaseio.com",
-    storageBucket: "todolist-7afba.appspot.com",
-    messagingSenderId: "289641993910"
-  };
+  apiKey: "AIzaSyDtyhXodBxH4gRL1ovrmyDmI2zqIivqDCE",
+  authDomain: "todolist-7afba.firebaseapp.com",
+  databaseURL: "https://todolist-7afba.firebaseio.com",
+  storageBucket: "todolist-7afba.appspot.com",
+  messagingSenderId: "289641993910"
+};
 
+// NgModule Stuff
 @NgModule({
   declarations: [
     MyApp,
@@ -44,7 +52,9 @@ export const firebaseConfig = {
     DetailsPage,
     EditDetailsPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }]
 })
-export class AppModule {}
+
+// Export class AppModule
+export class AppModule { }
 

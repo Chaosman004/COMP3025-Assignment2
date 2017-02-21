@@ -1,3 +1,11 @@
+/**
+ * File Name:home.ts
+ * Author: Robert Page
+ * Student Number: 200281838
+ * App Description: Main page typescipt
+ */
+
+// Imports
 import { Component } from '@angular/core';
 
 import { NavController, AlertController } from 'ionic-angular';
@@ -8,6 +16,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { DetailsPage } from '../details/details';
 import { EditDetailsPage } from '../details/editDetails';
 
+// Components
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -24,18 +33,20 @@ export class HomePage {
     this.todos = af.database.list('/todos');
   }
   // METHODS
- addTodo() {
+
+  // addTodo method
+  addTodo() {
     this.navCtrl.push(DetailsPage);
   }
 
-
-
-  editTodo(todo){
-    console.log(todo);
-    this.navCtrl.push(EditDetailsPage,todo);
+  // editTodo method
+  editTodo(todo) {
+    //send todo to edit page
+    this.navCtrl.push(EditDetailsPage, todo);
   }
 
-  deleteTodo(todoID){
-   this.todos.remove(todoID);
+  // deleteTodo
+  deleteTodo(todoID) {
+    this.todos.remove(todoID);
   }
 }

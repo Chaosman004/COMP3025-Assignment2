@@ -1,34 +1,40 @@
-<ion-header>
+<!--
+  File Name: details.html
+  Author: Robert Page
+  Student Number: 200281838
+  App Description: Loads the details view
+-->
 
+<!-- Header -->
+<ion-header>
   <ion-navbar>
     <ion-title>Todo Details</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
+<!-- Main content -->
 <ion-content padding>
   <ion-list>
-
+    <!-- Add Name -->
     <ion-item>
       <ion-label>Please enter Todo Name: </ion-label>
       <ion-input type="text" [(ngModel)]="todoName" name="name" placeholder="Name" id="Name"></ion-input>
     </ion-item>
-
+    <!-- Add Notes -->
     <ion-item>
       <ion-label>Notes: </ion-label>
       <ion-input type="text" [(ngModel)]="todoNotes" name="notes" placeholder="Notes" id="Notes"></ion-input>
     </ion-item>
-
+    <!-- Set Completed Status -->
     <ion-item>
       <ion-label>Completed: </ion-label>
       <ion-checkbox [(ngModel)]="todoCompleted" name="completed" id="Completed"></ion-checkbox>
     </ion-item>
-
   </ion-list>
 
   <div padding>
-  <button ion-button color="primary" (click)="addTodo(todoName,todoNotes,todoCompleted)">Submit</button>
-  <button ion-button color="secondary" (click)="cancel()">Cancel</button>
-</div>
+    <!-- Add or Cancel Buttons -->
+    <button ion-button color="primary" (click)="addTodo(todoName,todoNotes,todoCompleted)">Submit</button>
+    <button ion-button color="secondary" (click)="cancel()">Cancel</button>
+  </div>
 </ion-content>

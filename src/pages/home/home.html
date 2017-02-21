@@ -1,41 +1,51 @@
+<!--
+  File Name: home.html
+  Author: Robert Page
+  Student Number: 200281838
+  App Description: Loads main page
+-->
+<!-- Header -->
 <ion-header>
   <ion-navbar>
     <ion-title>Home</ion-title>
   </ion-navbar>
 </ion-header>
 
+<!-- Main Content -->
 <ion-content padding>
   <h1>Todos List</h1>
+  <!-- Add Todo button -->
   <button ion-button (click)="addTodo()">
     <ion-icon name="add"></ion-icon>
     Add New Todo
   </button>
+  <!-- Get Todos reference and load all todos into list-->
   <ion-list *ngFor="let todo of todos | async">
-        <ion-row>
-          <ion-col>
-            <ion-label>Name: {{todo.name}}</ion-label>
-          </ion-col>
-          <ion-col>
-            <ion-label>Notes: {{todo.notes}}</ion-label>
-          </ion-col>
-          <ion-col>
-            <ion-label>Completed: </ion-label>
-            <ion-checkbox checked="{{todo.completed}}"></ion-checkbox>
-          </ion-col>
-        
+    <ion-row>
       <ion-col>
-        <button ion-button color="primary" (click)="editTodo(todo)">
-        <ion-icon name="build" ></ion-icon>
-        Edit</button>
-        
-        <button ion-button color="danger" (click)="deleteTodo(todo)">
-        <ion-icon name="trash"></ion-icon>
-        Delete</button>
-        </ion-col>
+        <ion-label>Name: {{todo.name}}</ion-label>
+      </ion-col>
+      <ion-col>
+        <!-- Force Notes to auto rap -->
+        <ion-item text-wrap>
+        <ion-label>Notes: {{todo.notes}}</ion-label>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-label>
+          Completed:
+          <ion-checkbox checked="{{todo.completed}}" disabled="true"></ion-checkbox>
+        </ion-label>
 
-        </ion-row>
-      
-   
+      </ion-col>
+      <ion-col>
+        <!-- Edit button -->
+        <button ion-button color="primary" (click)="editTodo(todo)">
+        <ion-icon name="build" ></ion-icon> Edit</button>
+        <!-- Delete button -->
+        <button ion-button color="danger" (click)="deleteTodo(todo)">
+        <ion-icon name="trash"></ion-icon> Delete</button>
+      </ion-col>
+    </ion-row>
   </ion-list>
 </ion-content>
-

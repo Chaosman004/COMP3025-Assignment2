@@ -1,8 +1,16 @@
+/**
+ * File Name:details.ts
+ * Author: Robert Page
+ * Student Number: 200281838
+ * App Description: Details Typescript
+ */
+
+// Imports
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
-
+// Components
 @Component({
   selector: 'page-details',
   templateUrl: 'details.html'
@@ -11,6 +19,7 @@ export class DetailsPage {
   // PROPERTIES
   todos: FirebaseListObservable<any>;
 
+  // Constructor
   constructor(public navCtrl: NavController, public navParams: NavParams, af: AngularFire) {
     this.todos = af.database.list('/todos');
   }
@@ -19,8 +28,12 @@ export class DetailsPage {
     console.log('ionViewDidLoad DetailsPage');
   }
 
+  // Methods
+
+  // addTodo method
   addTodo(name: String, notes: String, completed: boolean) {
 
+    // just in case nothing is passed in auto add data
     if (name == undefined) {
       name = "name";
     }
@@ -32,11 +45,13 @@ export class DetailsPage {
       completed = false;
     }
 
-    console.log("Name: " + name + " Notes: " + notes + " Completed: " + completed);
+    // add todo
     this.todos.push({ name, notes, completed });
     this.navCtrl.pop();
   }
+
+  // ignore changes and go back
   cancel() {
-        this.navCtrl.pop();
-    }
+    this.navCtrl.pop();
+  }
 }
