@@ -29,6 +29,8 @@
 
   <div padding>
   <button ion-button color="primary" (click)="editTodo(todoName,todoNotes,todoCompleted)">Update</button>
+  <button ion-button color="secondary" (click)="cancel()">Cancel</button>
+  <button ion-button color="danger" (click)="deleteTodo(todo)"><ion-icon name="trash"></ion-icon>Delete</button>
 </div>
 
 </ion-content>

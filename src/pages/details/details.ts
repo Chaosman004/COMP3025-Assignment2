@@ -36,4 +36,7 @@ export class DetailsPage {
     this.todos.push({ name, notes, completed });
     this.navCtrl.pop();
   }
+  cancel() {
+        this.navCtrl.pop();
+    }
 }
