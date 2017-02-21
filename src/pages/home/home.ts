@@ -6,6 +6,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 // get a reference to the details page
 import { DetailsPage } from '../details/details';
+import { EditDetailsPage } from '../details/editDetails';
 
 @Component({
   selector: 'page-home',
@@ -29,8 +30,9 @@ export class HomePage {
 
 
 
-  editTodo(){
-    this.navCtrl.push(DetailsPage);
+  editTodo(todo){
+    console.log(todo);
+    this.navCtrl.push(EditDetailsPage,todo);
   }
 
   deleteTodo(todoID){

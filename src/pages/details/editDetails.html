@@ -1,0 +1,34 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Todo Edit Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list ng-bind="let todo of todos | async">
+
+    <ion-item>
+      <ion-label>Edit Todo Name: </ion-label>
+      <ion-input type="text" [(ngModel)]="todoName" name="name"  id="Name" [value]="todoName"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Edit Notes: </ion-label>
+      <ion-input type="text" [(ngModel)]="todoNotes" name="notes" id="Notes" [value]="todoNotes"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Completed: </ion-label>
+      <ion-checkbox [(ngModel)]="todoCompleted" name="completed" id="Completed" checked="todoCompleted"></ion-checkbox>
+    </ion-item>
+
+  </ion-list>
+
+  <div padding>
+  <button ion-button color="primary" (click)="editTodo(todoName,todoNotes,todoCompleted)">Update</button>
+</div>
+
+</ion-content>
